@@ -1,85 +1,74 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+import Navbar from '@/components/MoviesNavbar.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div id="app">
+    <Navbar />
+    <RouterView />
+  </div>
 </template>
 
-<style scoped>
+
+
+<style lang="scss" scoped>
+$primary-color: #007bff;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-color: #ddd;
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  background-color: $background-color;
+  border-bottom: 1px solid $border-color;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+  .logo-container {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    align-items: center;
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    width: 100px;
+    height: auto;
   }
 
-  header .wrapper {
+  .nav-links {
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+  .nav-link {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+
+    &.router-link-exact-active {
+      background-color: $primary-color;
+      color: #fff;
+    }
   }
+}
+
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 </style>
