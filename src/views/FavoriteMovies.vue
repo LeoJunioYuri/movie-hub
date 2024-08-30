@@ -37,10 +37,11 @@ const clearFavorites = () => {
 <style scoped>
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 1rem 0;
   padding: 0 1rem;
+  padding-top: 6rem;
 }
 
 .page-title {

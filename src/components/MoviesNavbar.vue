@@ -16,11 +16,16 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 nav {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #333;
   color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .nav-content {
@@ -62,10 +67,14 @@ nav {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .nav-links {
     width: 100%;
     justify-content: center;
   }
+}
+
+body {
+  margin-top: 3.5rem;
 }
 </style>

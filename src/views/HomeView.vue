@@ -48,7 +48,7 @@ const loadMore = () => {
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
