@@ -68,9 +68,10 @@ const clearFavorites = () => {
 .favorites-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.2rem;
+  row-gap: 4rem;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
