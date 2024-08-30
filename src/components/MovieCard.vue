@@ -5,7 +5,7 @@
       <h2>{{ title }}</h2>
       <p>Rating: {{ vote_average }} ({{ vote_count }} votes)</p>
       <div class="movie-buttons">
-        <RouterLink :to="'/movie/' + id" class="details-btn">View Details</RouterLink>
+        <RouterLink :to="'/movie/' + id" class="details-btn">Ver Detalhes</RouterLink>
         <button @click="toggleFavorite" class="favorite-btn">
           {{ isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
         </button>
