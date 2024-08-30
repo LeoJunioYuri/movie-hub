@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="header">
-      <h1 class="page-title">Favorites</h1>
-      <SubmitButton class="clear-btn" @click="clearFavorites">Clear All</SubmitButton>
+      <h1 class="page-title">Favoritos</h1>
+      <SubmitButton class="clear-btn" @click="clearFavorites">Remover todos Favoritos</SubmitButton>
     </div>
     <div v-if="favorites.length" class="favorites-grid">
       <MovieCard
@@ -15,7 +15,7 @@
         :vote_count="movie.vote_count"
       />
     </div>
-    <p v-else class="no-favorites">No favorites found.</p>
+    <p v-else class="no-favorites">Não foram encontrados filmes favoritos</p>
   </div>
 </template>
 
