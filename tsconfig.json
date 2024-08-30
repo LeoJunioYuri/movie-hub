@@ -1,14 +1,6 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ],
   "compilerOptions": {
+    "allowJs": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
@@ -21,7 +13,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["vite/client", "vue", "vite-plugin-vue2"]
+    "types": ["vite/client", "vue", "jest"],
+    "composite": true,
+    "declaration": true
   },
   "include": [
     "src/**/*.ts",

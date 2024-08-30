@@ -1,0 +1,1 @@
+//configurações globais de teste
