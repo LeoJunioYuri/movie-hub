@@ -1,39 +1,73 @@
-# movie-hub
+# MovieHub
 
-This template should help get you started developing with Vue 3 in Vite.
+MovieHub é uma aplicação web para listar, visualizar e gerenciar filmes favoritos. A aplicação utiliza Vue 3, Vuex, e a API do The Movie Database (TMDb) para fornecer uma interface interativa para explorar filmes e gerenciar uma lista de favoritos.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Listar Filmes**: Exibe uma lista de filmes com informações básicas como título, poster e avaliação.
+- **Adicionar aos Favoritos**: Permite adicionar filmes à lista de favoritos.
+- **Remover dos Favoritos**: Permite remover filmes da lista de favoritos.
+- **Remover Todos os Favoritos**: Limpa a lista de favoritos com um único clique.
+- **Tela Responsiva**: A aplicação é responsiva e funciona bem em dispositivos móveis e desktop.
 
-## Type Support for `.vue` Imports in TS
+## Tecnologias Utilizadas
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Vue 3**: Framework JavaScript para construir a interface de usuário.
+- **Vuex**: Gerenciamento de estado centralizado para Vue.js.
+- **Axios**: Biblioteca para fazer requisições HTTP.
+- **SCSS**: Pré-processador CSS para estilização.
+- **The Movie Database (TMDb) API**: API para obter dados de filmes.
 
-## Customize configuration
+## Pré-requisitos
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Node.js e pnpm instalados.
+- Chave de API do TMDb (definida em uma variável de ambiente).
 
-## Project Setup
+## Configuração do Projeto
 
-```sh
-pnpm install
-```
+1. **Clone o Repositório**
 
-### Compile and Hot-Reload for Development
+   ```bash
+   git clone https://github.com/SEU_USUARIO/movie-hub.git
+   cd movie-hub
 
-```sh
-pnpm dev
-```
+2. **Instale as Dependências**
 
-### Type-Check, Compile and Minify for Production
+    ```bash	
+    pnpm install
 
-```sh
-pnpm build
-```
+3. **Configure a Chave da API do TMDb**
+    -   Crie um arquivo .env na raiz do projeto e adicione sua chave de API do TMDb:
+    ```env
+    VITE_API_KEY=YOUR_TMDB_API_KEY
 
-### Lint with [ESLint](https://eslint.org/)
+4. **Execute a aplicação**
+    ```bash	
+    pnpm dev
 
-```sh
-pnpm lint
-```
+- A aplicação estará disponível em http://localhost:5173.
+
+## Estrutura do Projeto
+
+- **`/src`**: Código-fonte da aplicação.
+  - **`/components`**: Componentes reutilizáveis como `MovieCard` e `SubmitButton`.
+  - **`/views`**: Páginas da aplicação, incluindo `HomeView` e `FavoritesView`.
+  - **`/services`**: Serviços para interação com APIs, como `movieService.ts`.
+  - **`/store`**: Estado global da aplicação e gerenciador Vuex.
+- **`/tests`**: Testes unitários e de integração.
+- **`/public`**: Arquivos estáticos, como imagens e o arquivo `index.html`.
+
+## Testes
+
+Para executar os testes, use o seguinte comando:
+
+    ```bash
+    pnpm test
+
+- Os testes estão localizados em /src/tests e incluem testes para a Vuex store e componentes.
+
+## Contato
+- Email: leojunioyuri@hotmail.com
+- GitHub: https://github.com/LeoJunioYuri
+
+
