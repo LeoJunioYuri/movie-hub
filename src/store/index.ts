@@ -1,11 +1,12 @@
 import { createStore } from 'vuex';
+import { State, Movie, Actions } from './types';
 
-const getFavoritesFromLocalStorage = () => {
+const getFavoritesFromLocalStorage = (): Movie[] => {
   const favorites = localStorage.getItem('favorites');
   return favorites ? JSON.parse(favorites) : [];
 };
 
-const saveFavoritesToLocalStorage = (favorites: any[]) => {
+const saveFavoritesToLocalStorage = (favorites: Movie[]) => {
   localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
@@ -16,24 +17,24 @@ export default createStore({
     };
   },
   mutations: {
-    addFavorite(state: { favorites: Array<any> }, movie: any) {
+    addFavorite(state: State, movie: Movie) {
       console.log('Mutation addFavorite triggered with:', movie);
       if (!state.favorites.find(fav => fav.id === movie.id)) {
         state.favorites.push(movie);
         saveFavoritesToLocalStorage(state.favorites);
       }
     },
-    removeFavorite(state: { favorites: Array<any> }, movieId: number) {
+    removeFavorite(state: State, movieId: number) {
       state.favorites = state.favorites.filter(movie => movie.id !== movieId);
       saveFavoritesToLocalStorage(state.favorites);
     },
-    clearFavorites(state: { favorites: Array<any> }) {
+    clearFavorites(state: State) {
       state.favorites = [];
       saveFavoritesToLocalStorage(state.favorites);
     },
   },
   actions: {
-    addFavorite({ commit }: { commit: Function }, movie: any) {
+    addFavorite({ commit }: { commit: Function }, movie: Movie) {
       console.log('Action addFavorite triggered with:', movie);
       commit('addFavorite', movie);
     },
@@ -43,8 +44,8 @@ export default createStore({
     clearFavorites({ commit }: { commit: Function }) {
       commit('clearFavorites');
     },
-  },
+  } as Actions,
   getters: {
-    allFavorites: (state: { favorites: Array<any> }) => state.favorites,
+    allFavorites: (state: State) => state.favorites,
   },
 });
